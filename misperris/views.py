@@ -1,3 +1,4 @@
 from django.shortcuts import render
 
-# Create your views here.
+def goku_list(request):
+    return render(request, 'misperris/goku_list.html', {})
