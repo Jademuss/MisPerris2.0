@@ -1,0 +1,25 @@
+
+.msgerror
+{
+    align-content: center;
+    text-align: center;
+    margin-top: 60px;
+    font-size: 48px;
+    width: 100%;
+}
+
+
+.contimagen
+{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 12px;
+}
+
+.imgerror
+{
+   border: 4px;
+   border-style: solid;
+   border-color: black;
+}
