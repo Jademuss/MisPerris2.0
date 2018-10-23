@@ -4,6 +4,9 @@ from .models import Goku
 def goku_list(request):
     return render(request, 'misperris/goku_list.html', {})
 
+def goku_formulario(request):
+    return render(request, 'misperris/goku_formulario.html', {})
+
 def goku_notfound(request):
     return render(request, 'misperris/goku_notfound.html', {})
     
