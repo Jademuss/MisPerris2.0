@@ -1,0 +1,56 @@
+*
+{
+    margin: 0;
+    padding: 0;
+}
+
+.contenedor-formulario
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: cornsilk;
+}
+
+form
+{
+    display:flex; 
+    flex-direction: column;
+    align-items: center;
+    background: cornsilk;
+    box-shadow:2px 2px 2px 2px rgba(0,0,0,0.22);
+    padding: 10px;
+    margin: 10px;
+}
+
+.butons
+{
+    width: 90px;
+    height: 30px;
+    padding: 3px;
+    text-align: center;
+}
+
+.item-input
+{
+    display: flex;
+    flex-direction: column;
+    padding: 6px;
+    margin: 1px;
+}
+
+.item-input-boton
+{
+    display: flex;
+    justify-content: center;
+    width: 100px;
+    margin-top: 10px;
+}
+
+@media screen and (min-width:500px)
+{
+    form
+    {
+        width:50%;
+    }
+}

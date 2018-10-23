@@ -15,7 +15,7 @@
 
     <body>
         <div class="menu-container">
-            <a id="ref" href="goku_list.html"><span class="icon-paw"></span></a>
+            <a id="ref" href="{% url 'goku_list' %}"><span class="icon-paw"></span></a>
             <label id="btn-menu" class="icon-bars"></label>
             <nav id="navegador">
                 <ul>
@@ -26,12 +26,11 @@
                 </ul>
             </nav>
         </div>  
+
         <div class= "carousel-container">
             <div class="carousel slide"></div>
                 <div id="myCarousel" class="carousel slide" data-ride="carousel">
-                
                     <div class="carousel-inner" >   
-                        
                         <div class ="item active"> 
                         <img class="perritos" tabindex= "5" src="{% static 'img/perro_1.jpg' %}" alt ="perro adoptado 1" >
                         <div class ="descripcion" tabindex= "6">
@@ -123,6 +122,7 @@
                     <img class="img-galery" src="{% static 'img/galeria_7.jpg' %}" alt="Imagen perro">
                 </div>
             </div>
+
             <div class="item-info">
                 <div class="item-crow-res">
                     <div class="item-info-title">

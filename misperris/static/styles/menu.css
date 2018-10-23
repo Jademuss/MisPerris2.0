@@ -1,4 +1,5 @@
-.menu-container{
+.menu-container
+{
     display: flex;
     justify-content: space-between;
     width: 100%;
@@ -11,7 +12,8 @@
     top:0;
 
 }
-.icon-paw{
+.icon-paw
+{
     width: 45px;
     height: 45px;
     font-size: 45px;
@@ -20,7 +22,8 @@
     display: block;
     margin-left: 10px;
 }
-.icon-bars{
+.icon-bars
+{
     color: wheat;
     width: 45px;
     height: 45px;
@@ -28,10 +31,12 @@
     margin-right: 5px;
     cursor: pointer;
 }
-#ref{
+#ref
+{
     text-decoration: none;
 }
-nav{
+nav
+{
     list-style: none;
     position: absolute;
     top:60px;
@@ -39,17 +44,14 @@ nav{
     text-align: center;
     left: -100%;
     transition: 1s all;
-    
-    
 }
-#navegador ul{
+#navegador ul
+{
     list-style: none;
-    
-  
-    
 }
 
-.item-link{
+.item-link
+{
     color: wheat;
     background: rgba(0,0,0,.8);
     text-decoration: none;
@@ -57,14 +59,17 @@ nav{
     display: block;
     border-bottom: 1px solid rgba(255,255,255,.4);
 }
-.item-link:hover{
+.item-link:hover
+{
     background: rgba(0,0,0,.4);
 }
-.mover{
+.mover
+{
     transition: 1s all;
     left: 0%;
 }
-@media screen and (min-width:1000px){
+@media screen and (min-width:1000px)
+{
     .icon-bars
     {
         display: none
@@ -94,7 +99,8 @@ nav{
         box-sizing: border-box;
     }
   
-    .item-link:hover{
+    .item-link:hover
+    {
         background:rgba(255,255,255,.3);
         border-bottom: 3px solid wheat;
     }

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Formulario Inscripcion</title>
+        <link rel="icon" href="{% static 'img/iconoperro.png' %}">  
+        <link rel="stylesheet" href="{% static 'styles/menu.css' %}">
+        <link rel="stylesheet" href="{% static 'styles/main.css' %}">
+        <link href="https://file.myfontastic.com/BCwNLSewuX3SRWpNHcCZnR/icons.css" rel="stylesheet">
+    </head>
+
+    <body>
+        <div class="menu-container">
+            <a id="ref" href="{% url 'goku_list' %}"><span class="icon-paw"></span></a>
+            <label id="btn-menu" class="icon-bars"></label>
+            <nav id="navegador">
+                <ul>
+                    <li><a href="{% url 'goku_list' %}" class="item-link">Inicio</a></li>
+                    <li><a href="#" class="item-link">Adopcion</a></li>
+                    <li><a href="{% url 'goku_formulario' %}" class="item-link">Crear cuenta</a></li>
+                    <li><a href="{% url 'goku_notfound' %}" class="item-link">Ayuda</a></li>
+                </ul>
+            </nav>
+        </div>
+
+        <div class="contenedor-formulario">
+            <form tabindex="6" onsubmit="return valida();">
+                <h1>Inscripción:</h1>
+                <div class="item-input">
+                    <label for="txtemail">Correo:</label>
+                    <input type="email" id="txtemail" placeholder="Ingrese su correo" required/>
+                </div>
+                <div class="item-input">   
+                    <label for="txtrut" >Rut:</label>
+                    <input type="text" id="txtrut" onkeyup="modificartexto()" maxlength="10" placeholder="Ingrese su rut" required>
+                </div>
+                <div class="item-input">
+                    <label for="txtname">Nombres:</label>
+                    <input type="text" id="txtname" placeholder="Ingrese nombre" required>
+                    <span></span>
+                </div>
+                <div class="item-input">
+                    <label for="txtdate">Fecha:</label>
+                    <input type="date" id="txtdate" value="2001-01-01"  min="2001-01-01 " required>
+                </div>
+                <div class="item-input">  
+                    <label for="txtphone">Telefono:</label>
+                    <input type="number" id="txtphone"  placeholder="Ingrese telefono" required>
+                </div>
+                <div class="item-input">  
+                    <label for="txtRegion">Seleccione region: </label>
+                    <select id="txtRegion" oninput="selectCity()">
+                    </select>
+                </div>    
+                <div class="item-input">
+                    <label for="txtCity">Ciudad</label>
+                    <select id="txtCity">
+                    </select>
+                </div>
+               
+                <div class="item-input">
+                    <label for="sel-vivienda">Tipo vivienda:</label>
+                    <select id="sel-vivienda">
+                        <option>Casa con patio grande</option>  
+                        <option>Casa con patio pequeño</option>
+                        <option>Casa sin patio</option>
+                        <option>Departamento</option>
+                    </select>
+                </div>
+                <div class="item-input-boton">
+                    <button type="submit" class="butons">Registrar</button>
+                        
+                </div>
+            </form>
+        </div>
+    <script src="{% static 'js/Formulario.js' %}"></script>
+    <script src="{% static 'js/menujava.js' %}"></script>
+    </body>
+</html>
