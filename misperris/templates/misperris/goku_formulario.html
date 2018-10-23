@@ -27,19 +27,19 @@
         </div>
 
         <div class="contenedor-formulario">
-            <form tabindex="6" onsubmit="return valida();">
+            <form onsubmit="return validate();">
                 <h1>Inscripción:</h1>
                 <div class="item-input">
-                    <label for="txtemail">Correo:</label>
-                    <input type="email" id="txtemail" placeholder="Ingrese su correo" required/>
+                    <label for="txtEmail">Correo:</label>
+                    <input type="email" id="txtEmail" placeholder="Ingrese su correo" required/>
                 </div>
                 <div class="item-input">   
                     <label for="txtrut" >Rut:</label>
-                    <input type="text" id="txtrut" onkeyup="modificartexto()" maxlength="10" placeholder="Ingrese su rut" required>
+                    <input type="text" id="txtrut" onkeyup="modifytext()" maxlength="10" placeholder="Ingrese su rut" required>
                 </div>
                 <div class="item-input">
-                    <label for="txtname">Nombres:</label>
-                    <input type="text" id="txtname" placeholder="Ingrese nombre" required>
+                    <label for="txtName">Nombres:</label>
+                    <input type="text" id="txtName" placeholder="Ingrese nombre" required>
                     <span></span>
                 </div>
                 <div class="item-input">
@@ -47,12 +47,12 @@
                     <input type="date" id="txtdate" value="2001-01-01"  min="2001-01-01 " required>
                 </div>
                 <div class="item-input">  
-                    <label for="txtphone">Telefono:</label>
-                    <input type="number" id="txtphone"  placeholder="Ingrese telefono" required>
+                    <label for="txtPhone">Telefono:</label>
+                    <input type="tel" id="txtPhone" minlength="0" maxlength="9" placeholder="(9)12345678" required>
                 </div>
                 <div class="item-input">  
                     <label for="txtRegion">Seleccione region: </label>
-                    <select id="txtRegion" oninput="selectCity()">
+                    <select id="txtRegion" oninput="selectCity()" required>
                     </select>
                 </div>    
                 <div class="item-input">
@@ -68,6 +68,8 @@
                         <option>Casa con patio pequeño</option>
                         <option>Casa sin patio</option>
                         <option>Departamento</option>
+                        <option>Otro</option>
+
                     </select>
                 </div>
                 <div class="item-input-boton">

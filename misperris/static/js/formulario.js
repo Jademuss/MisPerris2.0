@@ -1,69 +1,50 @@
-function modifyText() 
-{
-    var letters = 
-                [   
-                    "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", 
-                    "l", "m", "n", "ñ", "o", "p", "q", "r", "s", "t", "u", 
-                    "v", "w", "x", "y", "z", ",", ".", "!", "'", "$", "%", "&",
-                    "/", "(", ")", "=", "?", "¿", "¡", ".", ","
-                ]
-
-    var txtRut = document.getElementById("txtRut")
-    txtRut.value = txtRut.value.toLowerCase()
-
-    for (let i in letters)
+function validate(){
+	var nombres,rut, email, telefono,fecha;
+    nombres = document.getElementById("txtName").value;
+    rut = document.getElementById("txtrut").value;    
+    email = document.getElementById("txtEmail").value;
+    telefono = document.getElementById("txtPhone").value;
+    fecha = document.getElementById("txtdate").value;
+    
+    if (nombres.split(' ').length < 2) {
+        alert("Ingrese nombre y apellido");
+        return false;
+    }else if (isNaN(telefono)){
+        alert("No se pueden ingresar letras ni caracteres, ingrese solo numeros");
+    }else if (telefono.length > 9)
     {
-        txtRut.value = txtRut.value.replace(letters[i], "")
-    }
-
-    if (txtRut.value.includes("-")) 
-    {
-        txtRut.value = txtRut.value.replace(/-/g, "")
-        txtRut.value = txtRut.value.slice(0, txtRut.value.length - 1) + "-" + txtRut.value.slice(txtRut.value.length - 1)
-    }
-    else
-    {
-        txtRut.value = txtRut.value.slice(0, txtRut.value.length - 1) + "-" + txtRut.value.slice(txtRut.value.length - 1)
-    }
-
-    if (txtRut.value.includes("k")) 
-    {
-        txtRut.value = txtRut.value.replace(/k/g, "")
-        txtRut.value += "k"
-    }
+        alert("El telefono debe ser de 9 digitos");
+        return false;
+    }else if (telefono.length < 8){
+        alert("El telefono debe ser de 9 digitos");
+        return false;
+    }else if (rut.length < 8){
+        alert("El rut debe tener entre 8 o 9 digitos");
+        return false;    
+}
 }
 
-function validate() 
-{
-	console.log("validando")
-	var txtName = document.getElementById("txtName").value;
-    var nameValidator = document.getElementById("nameValidator").value;
-    var txtEmail = document.getElementById("txtEmail").value;
-    var txtTelefono = document.getElementById("txtTelefono").value;
-    console.log(txtName.value.split(' ').length)
-    
-    if (txtName.value.split(' ').length < 2)
-    {
-		nameValidator.innerHTML = "Este campo debiese tener dos palabras al menos"
-    } 
-    else 
-    {
-		nameValidator.innerHTML = ""
-    }
-    
-    if (isNaN(txtTelefono))
-    {
-        alert("No se pueden ingresar letras ni caracteres, ingrese solo numeros");
-    }
-
-    if (txtTelefono.length > 9)
-    {
-        alert("El telefono debe ser de 9 digitos");
-    }
-
-    if (txtTelefono.length < 8)
-    {
-        alert("El telefono debe ser de 9 digitos");
+function modifytext() {
+    var letras = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j",
+    "l", "m", "n", "ñ", "o", "p", "q", "r", "s", "t", "u",
+    "v", "w", "x", "y", "z", ",", ".", "!", "'", "$", "%", "&",
+    "/", "(", ")", "=", "?", "¿", "¡", ".", ","
+]
+    var txtrut = document.getElementById("txtrut")
+    txtrut.value = txtrut.value.toLowerCase()
+    for (let i in letras) {
+        txtrut.value = txtrut.value.replace(letras[i], "")    }
+    if (txtrut.value.includes("-")) {
+        txtrut.value = txtrut.value.replace(/-/g, "")
+        txtrut.value = txtrut.value.slice(0, txtrut.value.length - 1) + "-" + txtrut.value.slice(txtrut.value.length - 1)
+    } else {
+        txtrut.value = txtrut.value.slice(0, txtrut.value.length - 1) + "-" + txtrut.value.slice(txtrut.value.length - 1)    }
+    if (txtrut.value.includes("k")) {
+        txtrut.value = txtrut.value.replace(/k/g, "")
+        txtrut.value += "k"
+    }else if (txtrut.length < 8){
+        alert("El rut debe ser de 8 o 9 digitos");
+        return false;
     }
 }
 
@@ -143,7 +124,7 @@ var txtCity = document.getElementById("txtCity")
 
 for (let i in chile.regiones) 
 {
-    let option = document.createElement("option")
+    let option = document.createElement("option")      
     option.innerHTML = chile.regiones[i].region;
     txtRegion.appendChild(option)
 }
