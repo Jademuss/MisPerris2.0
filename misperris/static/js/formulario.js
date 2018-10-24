@@ -11,7 +11,8 @@ function validate(){
         return false;
     }else if (isNaN(telefono)){
         alert("No se pueden ingresar letras ni caracteres, ingrese solo numeros");
-    }else if (telefono.length > 9)
+        return false;
+    }else if (telefono.length > 9)    
     {
         alert("El telefono debe ser de 9 digitos");
         return false;

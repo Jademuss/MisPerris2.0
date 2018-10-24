@@ -7,6 +7,9 @@ def goku_list(request):
 def goku_formulario(request):
     return render(request, 'misperris/goku_formulario.html', {})
 
+def goku_perros(request):
+    return render(request, 'misperris/goku_perros.html', {})
+
 def goku_notfound(request):
     return render(request, 'misperris/goku_notfound.html', {})
     
