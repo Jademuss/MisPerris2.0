@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Formulario Adopcion</title>
+        <link rel="icon" href="{% static 'img/iconoperro.png' %}">
+        <link rel="stylesheet" href="{% static 'styles/menu.css' %}">
+        <link rel="stylesheet" href="{% static 'styles/main.css' %}">
+        <link rel="stylesheet" href="{% static 'styles/formulario.css' %}">
+        <link href="https://file.myfontastic.com/BCwNLSewuX3SRWpNHcCZnR/icons.css" rel="stylesheet">
+    </head>
+
+    <body>
+        <div class="menu-container">
+            <a id="ref" href="{% url 'goku_list' %}"><span class="icon-paw"></span></a>
+            <label id="btn-menu" class="icon-bars"></label>
+            <nav id="navegador">
+                <ul>
+                    <li><a href="{% url 'goku_list' %}" class="item-link">Inicio</a></li>
+                    <li><a href="{% url 'goku_formulario' %}" class="item-link">Adopcion</a></li>
+                    <li><a href="{% url 'goku_notfound' %}" class="item-link">Sobre Nosotros</a></li>
+                    <li><a href="{% url 'goku_notfound' %}" class="item-link">Ayuda</a></li>
+                </ul>
+            </nav>
+        </div>
+
+        <div class="contenedor-formulario">
+            <form onsubmit="return validate();">
+                <h1>Ingreso Perros</h1>
+                <div class="item-input">
+                    <label for="txtNombre">Nombre:</label>
+                    <input type="text" id="txtNombre" placeholder="Ingrese nombre perro" required>
+                </div>
+                <div class="item-input">
+                    <label for="txtRaza">Raza Predominante:</label>
+                    <input type="text" id="txtRaza" placeholder="Ingrese raza perro" required>
+                </div>
+                <div class="item-input">
+                    <label for="txtDescripcion">Descripcion:</label>
+                    <input type="text" id="txtDescripcion" placeholder="Ingrese nombre perro" required>
+                </div>
+                <div class="item-input">
+                    <label for="sel-estado">Estado:</label>
+                    <select id="sel-estado">
+                        <option>Rescatado</option>  
+                        <option>Disposible</option>
+                        <option>Adoptado</option>
+                    </select>
+                </div>
+                <div class="item-input">
+                    <label for="file-perro">Fotografia:</label>
+                    <input type="file" name="file-perro"/>
+                </div>
+                <div class="item-input-boton">
+                    <button type="submit" class="butons">Registrar</button>
+                </div>
+            </form>
+        </div>
+
+    <script src="{% static 'js/perros.js' %}"></script>
+    <script src="{% static 'js/javamenu.js' %}"></script>    
+    </body>
+</html>

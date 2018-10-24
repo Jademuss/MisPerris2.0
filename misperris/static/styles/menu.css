@@ -83,13 +83,10 @@ nav
     {
         position: static;
         width: auto;
-  
     }
     nav ul
     {
         display: flex;
-     
-    
     }
     .item-link
     {
