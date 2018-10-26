@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="es">
+<head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Mis Nasus</title>
+        <link rel="icon" href="{% static 'img/iconoperro.png' %}">        
+        <link rel="stylesheet" href="{% static 'styles/menu.css' %}">
+        <link rel="stylesheet" href="{% static 'styles/main.css' %}">
+        <link rel="stylesheet" href="{% static 'styles/details.css' %}">
+        <link href="https://file.myfontastic.com/BCwNLSewuX3SRWpNHcCZnR/icons.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+<body>
+    <header>
+        <div class="menu-container">
+            <a id="ref" href="{% url 'goku_list' %}"><span class="icon-paw"></span></a>
+            <label id="btn-menu" class="icon-bars"></label>
+            <nav id="navegador">
+                <ul>
+                    <li><a href="{% url 'goku_list' %}" class="item-link">Inicio</a></li>
+                    <li><a href="{% url 'goku_formulario' %}" class="item-link">Adopcion</a></li>
+                    <li><a href="{% url 'goku_lista' %}" class="item-link">Conoce un lomito</a></li>
+                    {% if user.is_superuser %}
+                    <li><a href="{% url 'goku_new' %}" class="item-link">Lomiregistro</a></li>                 
+                    <li><a href="/admin/login/?next=/admin/" class="item-link">Login In</a></li>
+                    {% endif %}
+                    
+                </ul>
+            </nav>
+        </div> 
+    </header>
+
+    <div class="flex-container">
+        {% if goku.nombre_lomito %}
+        <div class="item-list">
+            <div class="item-list-img">
+                {% if goku.imagen_lomito %}
+                <img src="{{ goku.imagen_lomito.url }}" alt="imagen lomito">
+                {% endif %}
+
+            </div>
+            <div class="item-list-name">
+                <p id="name">{{ goku.nombre_lomito }}</p>
+            </div>
+            <div class="item-list-info">
+                <div class="item-list-data">Raza:</div>
+                <div class="item-list-data">
+                    <p id="raza"> {{ goku.raza_lomito }}</p>
+                </div>
+                <div class="item-list-data">Estado:</div>
+                <div class="item-list-data">
+                    <p id="estado">{{ goku.estado_lomito}}</p>
+                </div>
+                <div class="item-list-des">Descripcion:</div>
+                <div class="item-list-data">
+                    <p>
+                        {{ goku.descripcion_lomito }}
+                    </p>
+                </div>
+            </div>
+        </div>
+   
+        {% endif %}
+        <a id="ref-pencil" href="{% url 'goku_edit' pk=goku.pk %}"><span class="icon-pencil"></span></a>
+    </div>
+    <script src="{% static 'js/javamenu.js' %}"></script>
+</body>
+</html>

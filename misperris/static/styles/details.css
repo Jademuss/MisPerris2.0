@@ -1,0 +1,57 @@
+body{
+   background: url(../img/fondo.jpg);
+   background-attachment: fixed;
+   background-size: cover;
+}
+
+.flex-container{
+   width: 100%;   
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+}
+.item-form{
+   width:320px;
+   margin-top: 10%;
+   color:black;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   justify-content: center;
+   margin-bottom: 15px;
+   padding-top: 10px;
+   background: #ada266;
+   box-shadow: 2px 2px 2px 2px rgba(0,0,0,0.22);
+}
+.item-form input,textarea,select{
+   padding: 5px;
+   margin: 4px;
+   background: white;
+}
+#id_imagen_mascota{
+   background: none;
+}
+.item-form p{
+   max-width: 100%;
+   width: 70%;
+
+}
+
+.item-form p textarea{
+   max-width: 100%;
+}
+.item-form select {
+   margin-bottom: 7px;
+}
+.item-form button{
+   padding: 20px;
+   margin-top: 10px;
+   margin-bottom: 10px;
+}
+@media screen and (min-width:760px){
+   .item-form{
+       width: 360px;
+   }
+}

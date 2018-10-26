@@ -4,11 +4,13 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <title>Mis Nasus</title>
         <link rel="icon" href="{% static 'img/iconoperro.png' %}">  
         <link rel="stylesheet" href="{% static 'styles/entry.css' %}">
         <link rel="stylesheet" href="{% static 'styles/menu.css' %}">
         <link rel="stylesheet" href="{% static 'styles/main.css' %}">
+        <link rel="stylesheet" href="{% static 'styles/galeria.css' %}">
         <link href="https://file.myfontastic.com/BCwNLSewuX3SRWpNHcCZnR/icons.css" rel="stylesheet">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     </head>
@@ -21,9 +23,12 @@
                 <ul>
                     <li><a href="{% url 'goku_list' %}" class="item-link">Inicio</a></li>
                     <li><a href="{% url 'goku_formulario' %}" class="item-link">Adopcion</a></li>
-                    <li><a href="{% url 'goku_perros' %}" class="item-link">Rescatados</a></li>
-                    <li><a href="{% url 'goku_notfound' %}" class="item-link">Sobre Nosotros</a></li>
-                    <li><a href="{% url 'goku_notfound' %}" class="item-link">Ayuda</a></li>
+                    <li><a href="{% url 'goku_lista' %}" class="item-link">Conoce un lomito</a></li>
+                    {% if user.is_superuser %}
+                    <li><a href="{% url 'goku_new' %}" class="item-link">Lomiregistro</a></li>                   
+                    <li><a href="/admin/login/?next=/admin/" class="item-link">Login In</a></li>
+                    {% endif %}
+                    
                 </ul>
             </nav>
         </div>  
@@ -97,33 +102,6 @@
             </div>
         
         <div class="general-container">
-            <div class="item-galery">
-                <div class="item-galery-title">
-                    <h2>Galeria</h2>
-                </div>
-                <div class="item-galery-img">
-                    <img class="img-galery" src="{% static 'img/galeria_1.jpg' %}" alt="Imagen perro">
-                </div>
-                <div class="item-galery-img">
-                    <img class="img-galery" src="{% static 'img/galeria_2.jpg' %}" alt="Imagen perro">
-                </div>
-                <div class="item-galery-img">
-                    <img class="img-galery" src="{% static 'img/galeria_3.jpg' %}" alt="Imagen perro">
-                </div>
-                <div class="item-galery-img">
-                    <img class="img-galery" src="{% static 'img/galeria_4.jpg' %}" alt="Imagen perro">
-                </div>
-                <div class="item-galery-img">
-                    <img class="img-galery" src="{% static 'img/galeria_5.jpg' %}" alt="Imagen perro">
-                </div>
-                <div class="item-galery-img">
-                    <img class="img-galery" src="{% static 'img/galeria_6.jpg' %}" alt="Imagen perro">
-                </div>
-                <div class="item-galery-img">
-                    <img class="img-galery" src="{% static 'img/galeria_7.jpg' %}" alt="Imagen perro">
-                </div>
-            </div>
-
             <div class="item-info">
                 <div class="item-crow-res">
                     <div class="item-info-title">
@@ -144,7 +122,61 @@
                         <p>Se esta pensando en hacer diversas campañas con pequeñas empresas para poder financiar de manera correcta y precisa nuestros proyectos de adopcion, esperamos que en un futuro grandes empresas tambien puedan ser participes para poder ayudar de mejor manera a todos los perros que pueden llegar en un futuro.</p>
                     </div>
                 </div>
+				
+				<div class="item-galery">
+                <div class="item-galery-title">
+                    <h1>Galeria</h1>
+                </div>
+				
+				<div class="item-galery-title">
+                    <h2>Disponibles:</h2>
+                </div>
+				
+                <div class="item-galery">
+					{% if lomitos_disponibles %}
+                    {% for lomito in lomitos_disponibles %}
+					<div class="item-galery-img">
+						<img src="{{ lomito.imagen_lomito.url }}" alt="Imagen lomitos disponibles">
+					</div>
+					{% endfor %}
+					{% else %}
+					<h2>Lo sentimos :( No hay perritos disponibles por ahora</h2>
+					{% endif %}
+                </div>
+				
+				<div class="item-galery-title">
+                    <h2>Adoptados:</h2>
+                </div>
+				
+				<div class="item-galery">
+					{% if lomitos_adoptados %}
+                    {% for lomito in lomitos_adoptados %}
+					<div class="item-galery-img">
+						<img src="{{ lomito.imagen_lomito.url }}" alt="Imagen lomitos adoptados">
+					</div>
+					{% endfor %}
+					{% else %}
+					<h2>Lo sentimos :( No hay perritos adoptados por ahora</h2>
+					{% endif %}
+                </div>
+				
+				<div class="item-galery-title">
+                    <h2>Rescatados:</h2>
+                </div>
+				
+				<div class="item-galery">
+					{% if lomitos_rescatados %}
+                    {% for lomito in lomitos_rescatados %}
+					<div class="item-galery-img">
+						<img src="{{ lomito.imagen_lomito.url }}" alt="Imagen lomitos rescatados">
+					</div>
+					{% endfor %}
+					{% else %}
+					<h2>Lo sentimos :( No hay perritos rescatados por ahora</h2>
+					{% endif %}
+                </div>
             </div>
+            </div>	
         </div>
         <script src="{% static 'js/javamenu.js' %}"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>

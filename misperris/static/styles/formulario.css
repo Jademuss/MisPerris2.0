@@ -63,7 +63,7 @@ form
 @media screen and (min-width:500px)
 {
     form
-    {
+	{
         width:50%;
     }
 }
