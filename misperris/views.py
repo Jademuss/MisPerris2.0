@@ -41,7 +41,7 @@ def goku_list(request):
 def goku_lista(request):
     lista_de_lomitos = Goku.objects.all()
     lista_lomitos_disponibles = Goku.objects.filter(estado_lomito="disponible")
-    context = {'lista_de_lomitos': lista_de_lomitos,
+    context = {'lista_de_lomitos': lista_de_lomitos,			
               'lista_lomitos_disponibles':lista_lomitos_disponibles}
     return render(request,'misperris/goku_lista.html',context)
 
