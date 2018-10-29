@@ -47,7 +47,7 @@ def goku_lista(request):
 
 
 
-def goku_details(request):
+def goku_details(request,pk):
     goku = get_object_or_404(Goku, pk=pk)
     context = {'goku':goku}
     return render (request, 'misperris/goku_details.html',context)      
