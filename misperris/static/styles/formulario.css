@@ -7,8 +7,8 @@
 
 body
 {
-    padding-top: 50px;
-    background-color: #AD7840;
+    padding-top: 100px;
+    background-color: rgba(173, 120, 64, 0.322);
     background-attachment: fixed;
     background-size: cover;
 }
@@ -33,7 +33,7 @@ form
     display:flex; 
     flex-direction: column;
     align-items: center;
-    background:#BA9880;
+    background:rgba(186, 152, 128, 0.836);
     box-shadow:2px 2px 2px 2px rgba(0,0,0,0.22);
     padding: 10px;
     margin: 10px;

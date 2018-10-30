@@ -26,15 +26,4 @@ class Goku(models.Model):
     estado_lomito      = models.CharField(max_length=15, choices= opciones_estado)        
     
     def __str__(self):
-<<<<<<< HEAD
         return self.nombre_lomito 
-
-    
-    
-
-    
-    
-    
-=======
-        return self.nombre_lomito 
->>>>>>> 793c635a6fc1675d414648746257ef10734f2893

@@ -4,7 +4,7 @@
     justify-content: space-between;
     width: 100%;
     background: #AD7840;
-    height: 60px;
+    height: 100px;
     align-items: center;
     position: fixed;
     z-index: 100;
@@ -13,9 +13,11 @@
 }
 .icon-paw
 {
+    padding-left: 10px;
     width: 45px;
     height: 45px;
-    font-size: 45px;
+    font-size: 50px;
+    text-shadow: black 20%;    
     text-decoration: none;
     color: wheat; 
     display: block;
@@ -90,7 +92,7 @@ nav
     .item-link
     {
         padding: 21.2px;
-        border-right: 1px solid rgba(255,255,255,.4);
+        border-right: 1px solid rgba(255, 255, 255, 0.4);
         border-bottom: 0;
         box-sizing: border-box;
     }
@@ -98,7 +100,7 @@ nav
     .item-link:hover
     {
         background:rgba(255,255,255,.3);
-        border-bottom: 3px solid wheat;
+        border-bottom: 3px solid rgb(44, 46, 155);
     }
 
 }

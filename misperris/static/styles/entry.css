@@ -31,6 +31,8 @@
     /*CON ESTAS DOS COSAS ARREGLAS EL TEXTO DEL CARRUSEL*/
     transform: translate(-1%, -150%);
     font-size: 20px;
+    background-color: rgba(168, 133, 18, 0.486) ;
+    border-radius: 30%;
     color:white;
     width: 100%;;
     position: absolute;
