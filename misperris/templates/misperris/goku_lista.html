@@ -31,6 +31,31 @@
             </nav>
         </div> 
 		
+		<div class="flex-container">
+			{% if lista_de_lomitos %}
+			{% for lomito in lista_de_lomitos %}
+			<div class="item-list">
+				<div class="item-list-img">
+					<a href="{% url 'goku_details' pk=lomito.pk %}">
+					{% if lomito.imagen_lomito %}
+						<img src="{{ lomito.imagen_lomito.url }}" alt="">
+					{% endif %}    
+					</a>
+				</div>
+				<div class="item-list-info">
+				  
+					<div class="item-list-data">Estado:</div>
+					<div class="item-list-data">
+						<p id="height">{{ lomito.estado_lomito }}</p>
+					</div>
+				</div>
+			</div>
+			{% endfor %}
+			{% else %}
+			<h2>No hay mascotas en este momento</h2>
+			{% endif %}         
+		</div>
+		
 		<script src="{% static 'js/javamenu.js' %}"></script>
 </body>
 </html>
