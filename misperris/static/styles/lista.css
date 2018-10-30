@@ -8,6 +8,7 @@ body
 
 .flex-container
 {
+    margin-top:40px;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -40,6 +41,7 @@ body
 
 }
 
+
 .item-list-info 
 {
     width: 100%;
@@ -55,13 +57,16 @@ body
     display: flex;
     justify-content: center;
     padding: 10px;
-	border-radius: 50%;
+    border-radius: 50%;
+    max-height: 300px;
+    
     
 }
 
 .item-list-img img
 {
-    border-radius: 50%;
+   
+    border-radius: 50%;    
 }
 
 .item-list-data 

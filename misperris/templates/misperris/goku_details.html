@@ -43,20 +43,21 @@
                 {% endif %}
 
             </div>
-            <div class="item-list-name">
-                <p id="name">{{ goku.nombre_lomito }}</p>
-            </div>
             <div class="item-list-info">
+            <div class="item-list-data">Nombre:</div>
+                <div class="item-list-name">
+                    <p id="name">{{ goku.nombre_lomito }}</p>
+                </div>            
                 <div class="item-list-data">Raza:</div>
-                <div class="item-list-data">
+                <div class="item-list-raza">
                     <p id="raza"> {{ goku.raza_lomito }}</p>
                 </div>
                 <div class="item-list-data">Estado:</div>
-                <div class="item-list-data">
+                <div class="item-list-estado">
                     <p id="estado">{{ goku.estado_lomito}}</p>
                 </div>
-                <div class="item-list-des">Descripcion:</div>
-                <div class="item-list-data">
+                <div class="item-list-data">Descripcion:</div>
+                <div class="item-list-descripcion">
                     <p>
                         {{ goku.descripcion_lomito }}
                     </p>
