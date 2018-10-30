@@ -5,20 +5,26 @@ from django.shortcuts import redirect
 from .forms import CreateUserForm, LoginForm
 from django.template import loader
 from django.contrib.auth import authenticate,login
+from django.contrib.auth.models import User
+
+
+
+
+
 
 def index(request):
     form2 = LoginForm(request.POST or None)
     if form2.is_valid():    
         data = form.cleaned_data
-        correo_usuario = data.get("nombres_usuarios")
-        contraseña_usuarios = data.get("contraseña_usuarios")
-        acceso = authenticate(correo=nombres_usuarios, password=contraseña_usuarios)
+        correo = data.get("correo")
+        password = data.get("password")
+        acceso = authenticate(correo=correo, password=password)
         if acceso is not None:
             login(request,acceso)
-            return redirecting ('goku_list'.format (nombres_usuarios))
+            return render ('goku_list'.format (nombres_usuarios))
     
         else:
-            return redirecting ("Usuario y/o Contraseña invalidos")
+            return render ("Usuario y/o Contraseña invalidos")
     
     else:
             form = LoginForm()
@@ -27,6 +33,7 @@ def index(request):
             "form_login":form,
     }
     return render(request,'misperris/index.html',var)
+
 
 def goku_list(request): 
     lomitos_disponibles = Goku.objects.filter(estado_lomito="Disponible")[:3]
