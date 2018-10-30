@@ -3,7 +3,7 @@
     display: flex;
     justify-content: space-between;
     width: 100%;
-    background: black;
+    background: #AD7840;
     height: 60px;
     align-items: center;
     position: fixed;
@@ -52,7 +52,7 @@ nav
 .item-link
 {
     color: wheat;
-    background: rgba(0,0,0,.8);
+    background:#AD7840;
     text-decoration: none;
     padding: 24px;
     display: block;
@@ -60,7 +60,7 @@ nav
 }
 .item-link:hover
 {
-    background: rgba(0,0,0,.4);
+    background:#AD7840;
 }
 .mover
 {

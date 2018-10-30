@@ -8,17 +8,18 @@
 body
 {
     padding-top: 50px;
-    background-color: cornsilk;
+    background-color: #AD7840;
     background-attachment: fixed;
     background-size: cover;
 }
 
 .contenedor-formulario
 {
+    
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: cornsilk;
+    background-color: #D8CDB8;
     background-attachment: fixed;
     background-size: cover;
     box-shadow:2px 2px 2px 2px rgba(0,0,0,0.22);
@@ -32,7 +33,7 @@ form
     display:flex; 
     flex-direction: column;
     align-items: center;
-    background: cornsilk;
+    background:#BA9880;
     box-shadow:2px 2px 2px 2px rgba(0,0,0,0.22);
     padding: 10px;
     margin: 10px;
