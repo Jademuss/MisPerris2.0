@@ -6,7 +6,10 @@ from .forms import CreateUserForm, LoginForm
 from django.template import loader
 from django.contrib.auth import authenticate,login
 from django.contrib.auth.models import User
-
+from rest_framework.views import APIView
+from rest_framework.response import Response
+from rest_framework import status  
+from .serializers import perroSerializer
 
 
 
@@ -112,3 +115,14 @@ def goku_formulario(request):
         password = password1)        
         modelos.save() 
         return render(request, 'misperris/goku_formulario.html',{})
+
+class ListarPerro(APIView):
+
+    def get(self,request):
+        perros = Goku.objects.all()
+        serializers = perroSerializer(perros,context={"request":request},many=True)
+        return Response(serializers.data)
+
+    def post(self,request):
+        pass   
+
