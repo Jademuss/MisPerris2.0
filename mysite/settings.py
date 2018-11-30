@@ -126,8 +126,8 @@ STATIC_URL = '/static/'
 MEDIA_URL = "/media/"
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
-
-CORS_ORIGIN_REGEX_WHITELIST = (
-    'http://127.0.0.1:8887',
-    'https://KyleCepeda.github.io/',
-)
+CORS_ORIGIN_ALLOW_ALL = True
+# CORS_ORIGIN_REGEX_WHITELIST = (
+#     'http://127.0.0.1:8887',
+#     'https://KyleCepeda.github.io/',
+# )
